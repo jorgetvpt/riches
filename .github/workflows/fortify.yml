@@ -69,7 +69,7 @@ jobs:
         env: 
           FOD_TENANT: "travelport" 
           FOD_USER: "jorge.mayorga"
-          FOD_PAT: "Yz1GRzQpZVRZSzE0KWhEUmRoZEIxVTFiVWlyS1dm0"
+          FOD_PAT: ${{ secrets.FOD_PAT }}
           FOD_RELEASE_ID: "697159"
           FOD_URL: "https://ams.fortify.com/"
           FOD_API_URL: "https://api.ams.fortify.com/"
