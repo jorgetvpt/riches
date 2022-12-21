@@ -67,10 +67,10 @@ jobs:
       - name: Perform SAST Scan
         run: java -jar $FOD_UPLOAD_JAR -z package.zip -aurl $FOD_API_URL -purl $FOD_URL -rid "$FOD_RELEASE_ID" -tc "$FOD_TENANT" -uc "$FOD_USER" "$FOD_PAT" $FOD_UPLOADER_OPTS -n "$FOD_UPLOADER_NOTES"
         env: 
-          FOD_TENANT: ${{ secrets.FOD_TENANT }}  
-          FOD_USER: ${{ secrets.FOD_USER }}
+          FOD_TENANT: "travelport" 
+          FOD_USER: "jorge.mayorga"
           FOD_PAT: ${{ secrets.FOD_PAT }}
-          FOD_RELEASE_ID: ${{ secrets.FOD_RELEASE_ID }}
+          FOD_RELEASE_ID: "697159"
           FOD_URL: "https://ams.fortify.com/"
           FOD_API_URL: "https://api.ams.fortify.com/"
           FOD_UPLOADER_OPTS: "-ep 2 -pp 0 -I 1 -apf"
@@ -82,10 +82,10 @@ jobs:
         uses: fortify/gha-fod-generate-sarif@1.1.0
         with:
           base-url: https://ams.fortify.com
-          tenant: ${{ secrets.FOD_TENANT }}
-          user: ${{ secrets.FOD_USER }}
+          tenant: "travelport"
+          user: "jorge.mayorga"
           password: ${{ secrets.FOD_PAT }}
-          release-id: ${{ secrets.FOD_RELEASE_ID }}
+          release-id: 697159
           output: ./sarif/output.sarif
       
       # Import Fortify on Demand results to GitHub Security Code Scanning
